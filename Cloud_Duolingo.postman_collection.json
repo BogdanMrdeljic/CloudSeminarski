@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "621c531e-a9f6-406b-bf73-94e6be34ed74",
+		"name": "Cloud_Duolingo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "25235399"
+	},
+	"item": [
+		{
+			"name": "Base URL",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/api"
+			},
+			"response": []
+		},
+		{
+			"name": "USER /api/users/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ivana\",\r\n    \"email\": \"ivanapetrovic@yahoo.com\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/users/register"
+			},
+			"response": []
+		},
+		{
+			"name": "USER /api/users/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"stefanboskebozic@yahoo.com\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/users/login"
+			},
+			"response": []
+		},
+		{
+			"name": "COURSETRY /api/tries",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"668f0f432e128fab87f94e3d\",\r\n    \"courseId\": 1,\r\n    \"languageId\": 1,\r\n    \"marks\": 8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/api/tries"
+			},
+			"response": []
+		},
+		{
+			"name": "COURSETRY /api/tries/:userid",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"668f0f432e128fab87f94e3d\",\r\n    \"courseId\": 1,\r\n    \"languageId\": 1,\r\n    \"marks\": 8\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/tries?user=668f0f432e128fab87f94e3d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tries"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "668f0f432e128fab87f94e3d"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
